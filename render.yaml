@@ -1,8 +1,12 @@
 services:
   - type: web
-    name: video-translation-server
+    name: my-backend
     env: python
-    buildCommand: ""
-    startCommand: "./start.sh"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn backend:app --bind 0.0.0.0:10000"
     plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+        
     
