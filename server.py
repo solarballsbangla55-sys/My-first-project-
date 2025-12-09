@@ -1,11 +1,10 @@
-from flask import Flask
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
+@app.get("/", response_class=HTMLResponse)
 def home():
-    return "Server is working!"
+    return "Server working!"
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
   
