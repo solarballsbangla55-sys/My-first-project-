@@ -5,6 +5,7 @@ app = FastAPI()
 
 @app.get("/", response_class=HTMLResponse)
 def home():
-    return "Server working!"
+    return "<h1>Server working!</h1>"
+    
 
   
